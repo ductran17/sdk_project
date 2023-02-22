@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "cmsis_os.h": "c",
+        "portmacro.h": "c",
+        "gpio.h": "c",
+        "freertos.h": "c",
+        "cellular_comm_interface.h": "c",
+        "cellular_api.h": "c"
+    }
+}
