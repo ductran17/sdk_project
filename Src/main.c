@@ -63,7 +63,7 @@ static UBaseType_t ulNextRand;
 extern bool setupCellular(void);
 
 /* MQTT demo application. */
-extern void RunMQTTTask(void *pvParameters);
+// extern void RunMQTTTask(void *pvParameters);
 
 /* The task function to setup cellular with thread ready environment. */
 static void CellularDemoTask(void *pvParameters);
@@ -106,7 +106,7 @@ static void CellularDemoTask(void *pvParameters)
   configASSERT(retCellular == true);
 
   /* Run the MQTT demo. */
-  RunMQTTTask(pvParameters);
+  // RunMQTTTask(pvParameters);
 }
 /* USER CODE END 0 */
 

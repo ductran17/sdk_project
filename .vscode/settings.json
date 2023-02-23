@@ -5,6 +5,19 @@
         "gpio.h": "c",
         "freertos.h": "c",
         "cellular_comm_interface.h": "c",
-        "cellular_api.h": "c"
+        "cellular_api.h": "c",
+        "cellular_bg96.h": "c",
+        "event_groups.h": "c",
+        "cellular_sim70x0.h": "c",
+        "cellular_platform.h": "c",
+        "cellular_config.h": "c",
+        "cellular_config_defaults.h": "c",
+        "cellular_common_internal.h": "c",
+        "cellular_types.h": "c",
+        "cellular_common_api.h": "c",
+        "cellular_common.h": "c",
+        "cellular_at_core.h": "c",
+        "windows.h": "c",
+        "stm32f103x6.h": "c"
     }
 }

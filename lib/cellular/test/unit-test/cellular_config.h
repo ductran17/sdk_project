@@ -55,7 +55,7 @@
 #define LIBRARY_LOG_LEVEL LOG_NONE
 #endif
 
-// #include "logging_stack.h"
+#include "logging_stack.h"
 
 /* This is a project specific file and is used to override config values defined
  * in cellular_config_defaults.h. */
