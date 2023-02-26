@@ -18,6 +18,11 @@
         "cellular_common.h": "c",
         "cellular_at_core.h": "c",
         "windows.h": "c",
-        "stm32f103x6.h": "c"
+        "stm32f103x6.h": "c",
+        "stm32f1xx_hal_uart.h": "c",
+        "stm32f1xx_hal_def.h": "c",
+        "stm32f1xx_hal_dma_ex.h": "c",
+        "iot_config.h": "c",
+        "stm32f1xx.h": "c"
     }
 }

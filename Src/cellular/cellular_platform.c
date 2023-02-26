@@ -85,7 +85,7 @@ static bool prIotMutexTimedLock(PlatformMutex_t *pMutex,
     /* Call the correct FreeRTOS mutex take function based on mutex type. */
     if (pMutex->recursive == pdTRUE)
     {
-        lockResult = xSemaphoreTakeRecursive((SemaphoreHandle_t)&pMutex->xMutex, timeout);
+        lockResult = xSemaphoreTake((SemaphoreHandle_t)&pMutex->xMutex, timeout);
     }
     else
     {
@@ -158,7 +158,7 @@ bool PlatformMutex_Create(PlatformMutex_t *pNewMutex,
 
     if (recursive == true)
     {
-        xSemaphore = xSemaphoreCreateRecursiveMutexStatic(&pNewMutex->xMutex);
+        xSemaphore = xSemaphoreCreateMutexStatic(&pNewMutex->xMutex);
     }
     else
     {
@@ -222,7 +222,7 @@ void PlatformMutex_Unlock(PlatformMutex_t *pMutex)
     /* Call the correct FreeRTOS mutex unlock function based on mutex type. */
     if (pMutex->recursive == pdTRUE)
     {
-        (void)xSemaphoreGiveRecursive((SemaphoreHandle_t)&pMutex->xMutex);
+        (void)xSemaphoreGive((SemaphoreHandle_t)&pMutex->xMutex);
     }
     else
     {

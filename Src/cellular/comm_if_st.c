@@ -39,6 +39,7 @@
 #include "cellular_comm_interface.h"
 
 #include "stm32f103x6.h"
+#include "stm32f1xx_hal_uart.h"
 
 /* Configure logs for the functions in this file. */
 #ifdef IOT_LOG_LEVEL_GLOBAL
@@ -52,11 +53,11 @@
 
 /*-----------------------------------------------------------*/
 
-/* CELLULAR uses UART4 as main communication */
-#define CELLULAR_UART_MAIN UART4
-#define CELLULAR_UART_MAIN_IRQn UART4_IRQn
-#define CELLULAR_UART_MAIN_CLK_ENABLE __HAL_RCC_UART4_CLK_ENABLE
-#define CELLULAR_UART_MAIN_CLK_DISABLE __HAL_RCC_UART4_CLK_DISABLE
+/* CELLULAR uses UART1 as main communication */
+#define CELLULAR_UART_MAIN USART1
+#define CELLULAR_UART_MAIN_IRQn USART1_IRQn
+#define CELLULAR_UART_MAIN_CLK_ENABLE __HAL_RCC_USART1_CLK_ENABLE
+#define CELLULAR_UART_MAIN_CLK_DISABLE __HAL_RCC_USART1_CLK_DISABLE
 
 /**
  * @brief Comm events.
@@ -351,8 +352,8 @@ static HAL_StatusTypeDef prvCellularUartInit(UART_HandleTypeDef *hUart)
         hUart->Init.Mode = UART_MODE_TX_RX;
         hUart->Init.HwFlowCtl = UART_HWCONTROL_RTS_CTS;
         hUart->Init.OverSampling = UART_OVERSAMPLING_16;
-        hUart->Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-        hUart->AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+        // hUart->Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+        // hUart->AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT; //ductm27
         ret = HAL_UART_Init(hUart);
     }
 

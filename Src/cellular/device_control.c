@@ -48,6 +48,7 @@
 
 #define LIBRARY_LOG_NAME ("COMM_IF_ST_DEVICE")
 #include "iot_logging_setup.h"
+#include "gpio.h" //ductm27
 
 /*-----------------------------------------------------------*/
 
@@ -182,25 +183,25 @@ static const CellularGpioInitStruct_t _cellularGpioInitStruct[] =
     {
         /* Port     Pin                   Mode                  Pull            Speed                   Alternate */
         {.Port = CELLULAR_RST_GPIO_Port,
-         .Init = {CELLULAR_RST_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_RST_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_DTR_GPIO_Port,
-         .Init = {CELLULAR_DTR_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_DTR_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_PWR_EN_GPIO_Port,
-         .Init = {CELLULAR_PWR_EN_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_PWR_EN_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_STATUS_GPIO_Port,
-         .Init = {CELLULAR_STATUS_Pin, GPIO_MODE_INPUT, GPIO_PULLDOWN, GPIO_SPEED_FREQ_HIGH, 0}},
+         .Init = {CELLULAR_STATUS_Pin, GPIO_MODE_INPUT, GPIO_PULLDOWN, GPIO_SPEED_FREQ_HIGH}},
         {.Port = CELLULAR_RI_GPIO_Port,
-         .Init = {CELLULAR_RI_Pin, GPIO_MODE_INPUT, GPIO_PULLDOWN, GPIO_SPEED_FREQ_HIGH, 0}},
+         .Init = {CELLULAR_RI_Pin, GPIO_MODE_INPUT, GPIO_PULLDOWN, GPIO_SPEED_FREQ_HIGH}},
         {.Port = CELLULAR_SIM_SELECT_0_GPIO_Port,
-         .Init = {CELLULAR_SIM_SELECT_0_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_SIM_SELECT_0_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_SIM_SELECT_1_GPIO_Port,
-         .Init = {CELLULAR_SIM_SELECT_1_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_SIM_SELECT_1_Pin, GPIO_MODE_OUTPUT_PP, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_SIM_RST_GPIO_Port,
-         .Init = {CELLULAR_SIM_RST_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_SIM_RST_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_SIM_CLK_GPIO_Port,
-         .Init = {CELLULAR_SIM_CLK_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_SIM_CLK_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {.Port = CELLULAR_SIM_DATA_GPIO_Port,
-         .Init = {CELLULAR_SIM_DATA_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW, 0}},
+         .Init = {CELLULAR_SIM_DATA_Pin, GPIO_MODE_INPUT, GPIO_NOPULL, GPIO_SPEED_FREQ_LOW}},
         {NULL}};
 
 /**
@@ -210,13 +211,13 @@ static const CellularGpioInitStruct_t _cellularUartInitStruct[CELLULAR_INTERFACE
     {
         /*   Port     Pin                   Mode                Pull            Speed                         Alternate */
         {{.Port = CELLULAR_UART_MAIN_TX_GPIO_Port,
-          .Init = {CELLULAR_UART_MAIN_TX_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_VERY_HIGH, GPIO_AF8_UART4}},
+          .Init = {CELLULAR_UART_MAIN_TX_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_HIGH}},
          {.Port = CELLULAR_UART_MAIN_RX_GPIO_Port,
-          .Init = {CELLULAR_UART_MAIN_RX_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_VERY_HIGH, GPIO_AF8_UART4}},
+          .Init = {CELLULAR_UART_MAIN_RX_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_HIGH}},
          {.Port = CELLULAR_UART_MAIN_RTS_GPIO_Port,
-          .Init = {CELLULAR_UART_MAIN_RTS_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_VERY_HIGH, GPIO_AF8_UART4}},
+          .Init = {CELLULAR_UART_MAIN_RTS_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_HIGH}},
          {.Port = CELLULAR_UART_MAIN_CTS_GPIO_Port,
-          .Init = {CELLULAR_UART_MAIN_CTS_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_VERY_HIGH, GPIO_AF8_UART4}}},
+          .Init = {CELLULAR_UART_MAIN_CTS_Pin, GPIO_MODE_AF_PP, GPIO_PULLUP, GPIO_SPEED_FREQ_HIGH}}},
 };
 
 /*-----------------------------------------------------------*/
